@@ -4,8 +4,8 @@ from pathlib import Path
 print(Path.joinpath(Path.cwd(),"tokenizer.pt"))
 
 def summarizer(text):
-    tokpath=Path.joinpath(Path.cwd(),"server","tokenizer.pt")
-    modpath=Path.joinpath(Path.cwd(),"server","kobart.pt")
+    tokpath=Path.joinpath(Path.cwd(),"tokenizer.pt")
+    modpath=Path.joinpath(Path.cwd(),"kobart.pt")
     tokenizer = torch.load(tokpath)
     model = torch.load(modpath)
     text = text.replace('\n', ' ')
