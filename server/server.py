@@ -9,7 +9,7 @@ import os
 import sys
 import urllib.request
 import urllib.parse
-#from model import summarizer 
+from model import summarizer 
 
 app = Flask(__name__)
 api=Api(app, version='1.0', title='API 문서', description='Swagger 문서', doc="/api-docs")
@@ -64,9 +64,7 @@ def make_prediction():
         print(request_data)
         answ=(request_data['input'])
         to_sum=answ['text']
-        #res=summarizer(to_sum)
-        res={"members": [{ "id" : 1, "name" : "yerin" },
-                            { "id" : 2, "name" : "dalkong" }]}
+        res=summarizer(to_sum)
         print(res)
         ##res={"number":answ}
     return  jsonify(res)
