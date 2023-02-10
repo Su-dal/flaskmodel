@@ -4,6 +4,7 @@ from flask import request,render_template,jsonify
 from flask_restx import Api,Resource
 import json
 import re
+from flask_cors import CORS
 #import numpy as np
 import os
 import sys
@@ -12,6 +13,7 @@ import urllib.parse
 from model import summarizer 
 
 app = Flask(__name__)
+CORS(app)
 api=Api(app, version='1.0', title='API 문서', description='Swagger 문서', doc="/api-docs")
 app.config['JSON_AS_ASCII'] = False
 
